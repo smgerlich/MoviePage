@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+
+<head>
+
+  <title>Sean's Movies</title>
+
+  <meta name="viewport" 
+  content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <script src="../components/webcomponentsjs/webcomponents.js">
+  </script>
+
+	<link rel="import" href="components/font-roboto/roboto.html">
+	<link rel="import" href="components/core-header-panel/core-header-panel.html">
+	<link rel="import" href="components/core-toolbar/core-toolbar.html">
+	<link rel="import" href="components/paper-tabs/paper-tabs.html">
+	<link rel="import" href="components/paper-shadow/paper-shadow.html">
+
+	<style>
+		html,body {{
+			height: 100%;
+			margin: 0;
+			background-color: #E5E5E5;
+			font-family: 'RobotoDraft', sans-serif;
+		}}
+
+		.container {{
+			width: 80%;
+			margin: 50px auto;
+		}}
+		@media (min-width: 481px) {{
+			#tabs {{
+				width: 200px;
+				}}
+			.container {{
+				width: 400px;
+			}}
+		}}
+
+		core-header-panel {{
+		  height: 100%;
+		  overflow: auto;
+		  -webkit-overflow-scrolling: touch;
+		}}
+		core-toolbar {{
+		  background: #03a9f4;
+		  color: white;
+		  overflow: auto;
+		  -webkit-overflow-scrolling: touch;
+		}}
+		paper-tab > img {{
+			max-height:80%;
+		}}
+		paper-tab > span {{
+			margin-top:5px;
+		}}
+		#tabs {{
+		  width: 100%;
+		  margin: 0;
+		  -webkit-user-select: none;
+		  -moz-user-select: none;
+		  -ms-user-select: none;
+		  user-select: none;
+		  text-transform: uppercase;
+		}}
+		core-toolbar > paper-shadow {{
+			padding-left:15px;
+			padding-right: 15px;
+			background:gray;
+		}}
+		.detailPane {{
+			background: CFD1D0;
+			height:auto;
+			padding-left:10%;
+			padding-right:10%;
+			margin-top:50px;
+		}}
+		.detailPane > div {{
+			display: inline;
+			float: left;
+		}}
+		.youtube {{
+			min-width: 650px;
+			padding-right: 40px;
+			max-width: 45%;
+		}}
+		.details {{
+			min-width: 300px;
+			max-width: 650px;
+		}}
+	</style>
+</head>
+
+<body unresolved>
+
+	<core-header-panel>
+		<core-toolbar class="tall">
+			<paper-shadow z="3" id="home"><h2>Sean's Movies</h2></paper-shadow>
+			<paper-tabs id="tabs" scrollable="true" class="bottom indent"self-end>
+				{paper_tabs}
+			</paper-tabs>
+		</core-toolbar>
+		{movie_details}
+	</core-header-panel>
+
+	<script>
+	var tabs = document.querySelector('paper-tabs');
+	var details = document.getElementsByClassName('detailPane');
+
+	tabs.addEventListener('core-select', function() {{
+		for (var i=0; i<details.length; i++) {{
+			details[i].style.display = "none";
+		}}
+		document.getElementById(tabs.selected).style.display = "block";
+		}});
+	var home = document.getElementById("home");
+	home.addEventListener("click", function(){{
+		for (var i=0; i<details.length; i++) {{
+			details[i].style.display = "none";
+		}}
+		document.getElementById("welcome").style.display = "block";
+		}});
+	
+	</script>
+</body>
+
+</html>
