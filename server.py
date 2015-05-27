@@ -2,7 +2,8 @@
  
 import BaseHTTPServer
 import CGIHTTPServer
-import cgitb; cgitb.enable()  ## This line enables CGI error reporting
+## This line enables CGI error reporting
+import cgitb; cgitb.enable()  
 import webbrowser
  
 server = BaseHTTPServer.HTTPServer

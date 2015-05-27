@@ -5,15 +5,22 @@ Requirements:
 1. 	Python 2.7.9 (I think it should work with any 2.7.x version, but no guarantees).
 2. 	The Google Python API client. To get the API client, use 
 	
-		$ pip install --upgrade google-api-python-client
+		$ sudo pip install --upgrade google-api-python-client
 
 Instructions to run:
 
 1. 	Clone the repository from github or download the zip and extract.
 2. 	Open MoviePage.py to edit it and insert a Youtube API key in line 4. I've included my API key in 
 	the email submitting this project to Udacity. To anyone other than Udacity, git yer own dang key.
-3.	Run server.py to start a light http server with basic CGI scripting. 
-4. 	Open a Chrome window to http://localhost:8000/MoviePage.py. The CSS is a little off in IE and FF, 
+3.	On Mac and Linux, give executable permissions to server.py, MoviePage.py and media.py:
+
+		$ chmod +x server.py
+		$ chmod +x MoviePage.py
+		$ chmod +x media.py
+		$ chmod +x media.pyc
+	
+4.  Run server.py to start a light http server with basic CGI scripting. 
+5. 	Open a Chrome window to http://localhost:8000/MoviePage.py. The CSS is a little off in IE and FF, 
 	and it is really slow in IE.
 
 I used this project as an opportunity to learn a little bit about Google's Polymer framework, but
