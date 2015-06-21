@@ -3,7 +3,8 @@
 import media
 from apiclient.discovery import build
 
-api_key = 'AIzaSyBHYdwAzSqD7L9Dqib_oKw3ygxe4IPMi1Q'
+# Must insert API Key here
+api_key = ''
 playlist_id = 'PLvxSBboz1_2vgYIxJzQMYs1cHPpQwvkBc'
 
 
